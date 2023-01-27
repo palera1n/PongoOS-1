@@ -3351,7 +3351,7 @@ void set_rootdev(const char* cmd, char* args) {
     if (strlen(args) > 0x10) {
         printf("rootdev too large for paleinfo, not doing anything!\n");
     } else {
-        strncpy(rootdev, args, sizeof(args));
+        strncpy(rootdev, args, 0x10);
         printf("set rootdev in paleinfo to %s\n", rootdev);
     }
 }
