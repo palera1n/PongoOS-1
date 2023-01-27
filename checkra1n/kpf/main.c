@@ -3161,6 +3161,7 @@ void command_kpf() {
         checkra1n_flags &= ~checkrain_option_overlay;
     }
 
+#if 0
     if(true) // Only use underlying fs on union mounts
     {
         char *snapshotString = (char*)memmem((unsigned char *)text_cstring_range->cacheable_base, text_cstring_range->size, (uint8_t *)"com.apple.os.update-", strlen("com.apple.os.update-"));
@@ -3170,6 +3171,7 @@ void command_kpf() {
         *snapshotString = 'x';
         puts("KPF: Disabled snapshot temporarily");
     }
+#endif
 
     struct kerninfo *info = NULL;
     struct paleinfo *pinfo = NULL;
